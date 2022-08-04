@@ -581,16 +581,17 @@ a {
 @media (min-width: 1000px) {
   .list-recipes {
     flex-direction: row;
-    justify-content: space-between; }
+    gap: 24px 16px; }
   .list-recipes li {
-    width: 19%; }
-  .list-recipes li a:hover .photo {
+    width: calc(25% - 12px);
+    margin-bottom: 0;
+    background: white; }
+  .list-recipes li .photo {
     overflow: hidden; }
-  .list-recipes li a:hover .photo img {
-    transition: .5s ease; }
-  .list-recipes li a:hover .photo img {
-    transform: scale(1.2) rotate(15deg); }
-  .category .list-recipes li,
+  .list-recipes li img {
+    transition: .250s ease-out; }
+  .list-recipes li:hover img {
+    transform: scale(1.2); }
   .search-results .list-recipes li {
     width: 24%; } }
 

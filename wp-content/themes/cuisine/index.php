@@ -6,7 +6,7 @@
     <?php
       $argsPosts = array(
           'cat' => 1,
-          'posts_per_page' => 5
+          'posts_per_page' => 4
       );
       $loopPosts = new WP_Query( $argsPosts );
       while( $loopPosts->have_posts() ) : $loopPosts->the_post();

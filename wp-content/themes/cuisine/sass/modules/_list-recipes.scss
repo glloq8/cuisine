@@ -50,21 +50,22 @@
 @include up(1000px) {
   .list-recipes {
     flex-direction: row;
-    justify-content: space-between;
+    gap: 24px 16px;
   }
   .list-recipes li {
-    width:19%;
+    width: calc(25% - 12px);
+    margin-bottom: 0;
+    background: white;
   }
-  .list-recipes li a:hover .photo {
+  .list-recipes li .photo {
     overflow: hidden;
   }
-  .list-recipes li a:hover .photo img {
-    transition: .5s ease;
+  .list-recipes li img {
+    transition: .250s ease-out;
   }
-  .list-recipes li a:hover .photo img {
-    transform: scale(1.2) rotate(15deg);
+  .list-recipes li:hover img {
+    transform: scale(1.2);
   }
-  .category .list-recipes li,
   .search-results .list-recipes li {
     width:24%;
   }
