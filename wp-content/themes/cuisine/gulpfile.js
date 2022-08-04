@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const del = require('del');
 //const plumber = require('gulp-plumber');
-const sprite = require('gulp-svg-sprite');
 const browserSync = require('browser-sync').create();
 
 // Compilation SCSS
@@ -30,10 +29,9 @@ gulp.task('clean', () => {
 // Hot reload
 gulp.task('sync', () => {
     browserSync.init({
-        proxy : "http://cuisine.local",
-        host: 'cuisine.local',
-        open: 'external'
-    });
+        proxy: "http://cuisine.local",
+        open: false,
+      });
 
     gulp.watch("sass/**/*.scss", gulp.series('styles'));
     gulp.watch("**/*.php").on('change', browserSync.reload);

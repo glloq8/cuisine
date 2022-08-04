@@ -46,11 +46,9 @@ wp-config.php
 
 
 # End of https://www.toptal.com/developers/gitignore/api/wordpress
-dump/ratelyan_portfolio_2022-08-04_09-43-58.sql
-dump/ratelyan_portfolio_2022-08-04_09-43-58.sql.zip
-wp-content/backup-db/.htaccess
-wp-content/backup-db/912a3eeba27859d7171b3d9cf55fd4d3_-_1656692595_-_ratelyan_portfolio.sql.gz
-wp-content/backup-db/7886471a277979ecf33292dfd6366a7c_-_1657902091_-_ratelyan_portfolio.sql.gz
-wp-content/backup-db/d0a0ff1317eeaeaaffdef6de23097aa7_-_1659112284_-_ratelyan_portfolio.sql.gz
-wp-content/backup-db/index.php
+dump
+wp-content/backup-db
 robots.txt
+wp-content/themes/cuisine/node_modules
+wp-content/themes/cuisine/gulpfile.js
+wflogs
