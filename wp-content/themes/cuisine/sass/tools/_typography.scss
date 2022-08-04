@@ -1,0 +1,67 @@
+// Variables
+// ==============
+$baseFontFamily: 'aller', Arial, Verdana, Helvetica, sans-serif;
+$fontAvenir : 'avenir';
+
+// Titles
+// ==============
+
+%primary-title,
+.primary-title {
+  font-family: $fontAvenir;
+  color:$black;
+  font-size:2.5rem;
+  margin-bottom: space(3);
+}
+%primary-title::after,
+.primary-title::after {
+  content:'';
+  display: flex;
+  height:7px;
+  width:100px;
+  background:$blue;
+}
+
+%secondary-title,
+.secondary-title {
+  font-size:2.2rem;
+}
+
+%read-more,
+.read-more {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size:1.8rem;
+}
+%read-more span,
+.read-more span {
+  display: flex;
+  flex-direction: column;
+}
+%read-more span::after,
+.read-more span::after {
+  content:'';
+  display: inline-block;
+  transition:.3s;
+  width:0;
+  height:4px;
+  background:$blue;
+  margin-top:space(1);
+}
+
+@include up(1000px) {
+  %primary-title,
+  .primary-title {
+    font-size:3.5rem;
+  }
+  %primary-title::after,
+  .primary-title::after {
+    height:10px;
+    width:150px;
+  }
+  %secondary-title,
+  .secondary-title {
+    min-height: space(10);
+  }
+}

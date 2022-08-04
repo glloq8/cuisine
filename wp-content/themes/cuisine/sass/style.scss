@@ -1,0 +1,162 @@
+// styles
+// --------------------------------------------------
+
+@import '_global';
+
+.last h3, .categories h3 {
+  @extend %primary-title;
+}
+.last, .categories {
+  margin-bottom: space(5);
+}
+.categories__list {
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.categories__list li {
+  width:100%;
+  @extend %shadow;
+  margin-bottom: space(4);
+  text-align:center;
+  padding:space(3) space(2);
+}
+.categories__list li a {
+  text-decoration: none;
+}
+.categories__list li .photo {
+  margin-bottom:space(3);
+}
+.categories__list li .photo img {
+  max-width: 80%;
+  height:auto;
+}
+.categories__list li h2 {
+  font-size:4rem;
+}
+.recipes .list-recipes {
+  flex-wrap: wrap;
+}
+.recipe .content {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+}
+.recipe .content h2 {
+  border-bottom:1px solid $gray;
+  padding-bottom:space(1);
+}
+.recipe .content .left {
+  width:100%;
+  margin-bottom: space(4);
+}
+.recipe .content .left .photo {
+  margin-bottom:space(3);
+}
+.recipe .content .left .photo img {
+  object-fit: cover;
+  width:100%;
+}
+.recipe .content .left .nbr-personnes {
+  border-bottom:1px solid $gray;
+  padding:0 0 space(3) 0;
+  margin-bottom:space(3);
+  font-size:2rem;
+}
+.recipe .content .right {
+  flex:1;
+}
+.recipe .content .right .content-recipe h2,
+.recipe .content .right .astuces h2 {
+  @extend %secondary-title;
+  min-height:0;
+  margin-bottom:0;
+}
+.recipe .content .right .steps li {
+  display:flex;
+  align-items: start;
+  font-size:2rem;
+  padding:space(3) space(1);
+  line-height:1.4;
+}
+.recipe .content .right .steps li + li {
+  border-top:1px dashed $gray;
+}
+.recipe .content .right .steps li .number {
+  font-size:4rem;
+  margin-right: space(3);
+}
+.recipe .content .right .steps li .checkbox {
+  margin-top:space(2.3);
+  margin-right:space(3);
+}
+.recipe .content .right .steps li div {
+  align-self: center;
+  flex:1;
+}
+.recipe .content .right .astuces {
+  font-size:2rem;
+}
+.recipe .content .right .astuces h2 {
+  border-top:1px solid $gray;
+  padding-top:space(1.5);
+  margin-bottom:space(2);
+}
+.recipe .content .right .astuces .content-astuces p {
+  display: flex;
+  align-items: center;
+}
+.recipe .content .right .astuces .content-astuces p::before {
+  content:'\00a4';
+  margin-right:space(1);
+}
+.list-ingredients {
+  margin-bottom: space(5);
+}
+.list-ingredients h3 {
+  @extend %primary-title;
+}
+.list-ingredients__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.list-ingredients__list li {
+  font-size:2.3rem;
+  margin:0 space(2);
+  line-height:1.6;
+}
+.list-ingredients__list li a {
+  text-decoration: none;
+}
+.list-ingredients__list li a:hover {
+  text-decoration: underline;
+}
+.no-result {
+  font-size:3rem;
+  text-align: center;
+}
+
+@include up(1000px) {
+  .categories__list li {
+    width:24%;
+  }
+  .recipe .content {
+    flex-direction: row;
+  }
+  .recipe .content .left {
+    width:30%;
+  }
+  .recipe .content .right {
+    margin-left:space(5);
+  }
+}
+
+@include between(500px, 800px) {
+  .categories__list li {
+    width: 24%;
+  }
+  .categories__list li h2 {
+    font-size: 2rem;
+  }
+}

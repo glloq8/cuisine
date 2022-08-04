@@ -1,0 +1,21 @@
+//
+// pictos
+// --------------------------------------------------
+
+
+[class*="picto-"],
+[class*="logo-"],
+[class*="arrow-"],
+[class*="quotes-"] { @include picto-style;}
+
+/* pictos */
+.picto-contact-01 { width:110px; height:111px; background-image:url(../images/picto-contact-01.png);}
+
+/* logos */
+
+
+/* fleches */
+.arrow-black-01-left { width:15px; height:29px; background-image:url(../images/arrow-black-01-left.png);}
+
+/* guillemets */
+.quotes-01 { width:24px; height:17px; background-image:url(../images/quotes-01.png);}

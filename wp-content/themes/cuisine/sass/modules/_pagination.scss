@@ -1,0 +1,27 @@
+.pagination {
+  padding:space(3) 0;
+}
+.page-numbers {
+  display: flex;
+  justify-content: center;
+}
+.page-numbers li {
+  display: flex;
+  margin:0 space(1);
+  font-size:2rem;
+}
+.page-numbers li a,
+.page-numbers li span {
+  display:block;
+  padding:space(1) space(2);
+  border:1px solid $pink;
+}
+.page-numbers li a {
+  text-decoration: none;
+  background:$pink;
+  color:$white;
+}
+.page-numbers li span {
+  background:$white;
+  color:$pink;
+}

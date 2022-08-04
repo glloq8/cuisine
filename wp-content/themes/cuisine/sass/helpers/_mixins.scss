@@ -1,0 +1,66 @@
+//
+// mixins
+// --------------------------------------------------
+
+/* Fonction toute prête pour gérer Rem et Pixel en fonction des supports des navigateurs. */
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+%shadow {
+  box-shadow: 0px 1px 17.85px 3.15px rgba(72, 71, 71, 0.15);
+}
+
+@mixin radius($radius) {
+	border-radius: $radius;
+}
+
+@mixin gradient($color1, $color2) {
+	background-color: $color1;
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$color1}, endColorstr=#{$color2});
+	background-image: -moz-linear-gradient(center top, $color1, $color2);
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color1), to($color2));
+}
+
+// Espacement
+$space: 8px;
+$gap : 8px;
+
+:root {
+    --gap: #{$gap}; //Variable CSS
+}
+
+@function space($i) {
+    @return calc(var(--gap) * #{$i});
+}
+
+@each $i in 1, 2, 3, 4 {
+    .mb-#{$i} {
+        margin-bottom: space($i);
+    }
+}
+
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// Responsive
+@mixin up($size) {
+  $size: strip-unit($size);
+  @media (min-width: $size * 1px) { @content; }
+}
+@mixin down($size) {
+  $size: strip-unit($size);
+  @media (max-width: $size * 1px) { @content; }
+}
+@mixin between($down, $up) {
+  $down: strip-unit($down);
+  $up: strip-unit($up);
+  @media (min-width: $down * 1px) and (max-width: $up * 1px) { @content; }
+}

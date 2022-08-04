@@ -1,0 +1,95 @@
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index, -1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+
+// Font face
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + str_replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $text), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src
+    }
+}
+
+// Responsive
+@function strip-units($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+@mixin up($size) {
+    $size: strip-unit($size);
+    @media (min-width: $size + 1px) { content; }
+}
+
+@mixin down($size) {
+    $size: strip-unit($size);
+    @media (max-width: $size * 1px) { content; }
+}
+
+
+// Espacement
+$space: 8px;
+$gap : 8px;
+
+:root {
+    --gap: #{$gap}; //Variable CSS
+}
+
+@function space($i) {
+    @return calc(var(--gap) * #{$i});
+}
+
+@each $i in 1, 2, 3, 4 {
+    .mb-#{$i} {
+        margin-bottom: space($i);
+    }
+}
+
+
+// Soulignement
+%underlined {
+    background-repeat:no-repeat;
+    background-size: 0 100%;
+    background-position: left 0 bottom .08em;
+    transition: background-size .3s;
+    background-image: linear-gradient(transparent calc(100% - 2px), #000 100%);
+
+    &:hover,
+    &.active {
+        background-size:100% 100%;
+    }
+}
+// Pour utilisation
+a {
+    @extend %underlined;
+}

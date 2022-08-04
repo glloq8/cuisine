@@ -1,0 +1,25 @@
+.ingredients li {
+  display: flex;
+  padding: space(2) space(1);
+}
+.ingredients li + li {
+  border-top: 1px dashed $text;
+}
+.ingredients h2 {
+  @extend %secondary-title;
+  margin-bottom:space(2);
+  min-height: 0;
+  padding-bottom:space(3) !important;
+}
+.ingredients ul li {
+  display:flex;
+  align-items: center;
+  font-size:2rem;
+}
+.ingredients ul li .ingredient__name {
+  flex:1;
+  margin-left:space(1);
+}
+.ingredients ul li .qte {
+  margin-left:5px;
+}
