@@ -137,6 +137,10 @@
   text-align: center;
 }
 
+#wpadminbar {
+  display: none;
+}
+
 @include up(1000px) {
   .categories__list li {
     width:24%;

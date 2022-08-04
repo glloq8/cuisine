@@ -108,6 +108,11 @@
     .header__logo {
         font-size:10rem;
     }
+    .site__nav {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
     .site__nav li a {
         font-size:2.6rem;
         padding:0 4rem;
