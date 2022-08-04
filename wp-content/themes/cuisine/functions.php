@@ -13,7 +13,6 @@ function yr_add_css() {
 add_action('wp_enqueue_scripts','yr_add_css', 1);
 
 function yr_theme_js() {
-  wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/script.js', array() );
 }
 add_action( 'wp_footer', 'yr_theme_js' );

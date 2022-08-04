@@ -712,7 +712,8 @@ a {
 
 .recipe .content .right .steps li .number {
   font-size: 4rem;
-  margin-right: calc(var(--gap) * 3); }
+  margin-right: calc(var(--gap) * 3);
+  line-height: 1; }
 
 .recipe .content .right .steps li .checkbox {
   margin-top: calc(var(--gap) * 2.3);
@@ -760,6 +761,11 @@ a {
 .no-result {
   font-size: 3rem;
   text-align: center; }
+
+.taken {
+  background: #eee;
+  font-style: italic;
+  color: #9c95a0; }
 
 #wpadminbar {
   display: none; }

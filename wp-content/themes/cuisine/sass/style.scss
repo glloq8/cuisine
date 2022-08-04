@@ -83,8 +83,9 @@
   border-top:1px dashed $gray;
 }
 .recipe .content .right .steps li .number {
-  font-size:4rem;
+  font-size: 4rem;
   margin-right: space(3);
+  line-height: 1;
 }
 .recipe .content .right .steps li .checkbox {
   margin-top:space(2.3);
@@ -135,6 +136,12 @@
 .no-result {
   font-size:3rem;
   text-align: center;
+}
+
+.taken {
+  background: #eee;
+  font-style: italic;
+  color: lighten($text, 20%);
 }
 
 #wpadminbar {
