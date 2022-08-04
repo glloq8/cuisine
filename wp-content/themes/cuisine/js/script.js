@@ -1,7 +1,11 @@
-jQuery(document).on('ready', function() {
+let downArrow = document.querySelector('.down');
 
-    jQuery('.down').click( function() {
-        jQuery('.header').addClass('active');
-    });
+downArrow.addEventListener('click', function() {
+    document.querySelector('.header').classList.toggle('active');
 
+    document.cookie = 'header=active';
 });
+
+if( document.cookie.indexOf('header=active') > -1 ) {
+    document.querySelector('.header').classList.add('hidden');
+}

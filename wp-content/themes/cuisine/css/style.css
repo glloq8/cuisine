@@ -400,7 +400,7 @@ a {
   transition: .5s; }
 
 .header.active {
-  margin-top: calc(-100vh + 32px); }
+  margin-top: calc(-100vh); }
 
 .header__logo, .header .down {
   display: none; }
@@ -412,6 +412,8 @@ a {
   justify-content: center;
   position: relative;
   height: 100vh; }
+  .home .header.hidden {
+    display: none; }
 
 .home .header__logo {
   display: flex;
@@ -438,11 +440,12 @@ a {
   padding-top: 10px;
   text-align: center;
   border-radius: 50%;
-  transition: .3s;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: 250ms ease-in-out; }
 
 .home .header .down:hover {
-  padding: 20px 10px 10px 25px; }
+  padding: 20px 10px 10px 25px;
+  transform: rotate(360deg); }
 
 .home .header .down svg {
   width: 50px;

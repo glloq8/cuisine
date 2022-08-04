@@ -12,7 +12,7 @@
     transition:.5s;
 }
 .header.active {
-    margin-top: calc(-100vh + 32px);
+    margin-top: calc(-100vh);
 }
 .header__logo, .header .down {
     display: none;
@@ -25,6 +25,10 @@
     justify-content: center;
     position: relative;
     height:100vh;
+
+    &.hidden {
+        display: none;
+    }
 }
 .home .header__logo {
     display: flex;
@@ -51,11 +55,12 @@
     padding-top:10px;
     text-align:center;
     @include radius(50%);
-    transition:.3s;
     cursor:pointer;
+    transition: 250ms ease-in-out;
 }
 .home .header .down:hover {
     padding:20px 10px 10px 25px;
+    transform: rotate(360deg);
 }
 .home .header .down svg {
     width:50px;
