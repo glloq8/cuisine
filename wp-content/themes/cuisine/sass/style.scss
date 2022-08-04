@@ -3,6 +3,10 @@
 
 @import '_global';
 
+body.first-visite {
+  overflow: hidden;
+}
+
 .last h3, .categories h3 {
   @extend %primary-title;
 }

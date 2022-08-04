@@ -636,6 +636,9 @@ a {
 .ingredients ul li .qte {
   margin-left: 5px; }
 
+body.first-visite {
+  overflow: hidden; }
+
 .last, .categories {
   margin-bottom: calc(var(--gap) * 5); }
 
